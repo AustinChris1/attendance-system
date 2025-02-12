@@ -45,7 +45,7 @@ const loadLabeledImages = async () => {
   const descriptions = await Promise.all(
     labels.map(async (label) => {
       const labeledImage = await loadImage(
-        `https://firebasestorage.googleapis.com/v0/b/bodycam1001.appspot.com/o/images%2F${label}.jpg?alt=media`,
+        `https://firebasestorage.googleapis.com/v0/b/face-access-1.appspot.com/o/images%2F${label}.jpg?alt=media`,
       );
 
       if (!labeledImage || labeledImage.width === 0 || labeledImage.height === 0) {
@@ -73,16 +73,6 @@ const labeledFaceDescriptors = await loadLabeledImages();
 // Function to send image to Telegram
 async function sendToTelegram(photoBuffer: Buffer, label: string): Promise<void> {
   try {
-    // Send location message
-    const locationUrl = `https://api.telegram.org/bot${BOTtoken}/sendLocation`;
-    const locationResponse = await fetch(locationUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-      }),
-    });
-
 
     // Send photo message
     const photoUrl = `https://api.telegram.org/bot${BOTtoken}/sendPhoto`;
@@ -125,7 +115,6 @@ export const router = new Hono().post("/stream", async (c) => {
     if (!image || image.width === 0 || image.height === 0) {
       return c.json({ error: "Invalid image size" }, 400);
     }
-    //await sendToTelegram(imageBuffer, 'x', location, latitude, longitude);
 
     // Perform face detection
     const detections = await faceapi
