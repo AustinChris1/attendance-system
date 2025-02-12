@@ -1,0 +1,35 @@
+{
+	"name": "image-processing",
+	"type": "module",
+	"scripts": {
+		"start": "tsx scripts/run.ts",
+		"dev": "tsx watch scripts/run.ts",
+		"bundle": "pnpx bun scripts/bundle.ts",
+		"transpile": "pnpx bun scripts/transpile.ts",
+		"test": "node --import tsx --test ./tests/integration.ts",
+		"test:dev": "node --import tsx --test --watch ./tests/integration.ts",
+		"deploy": "vercel deploy"
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.12.1",
+		"@tensorflow/tfjs-node": "^4.22.0",
+		"@vladmandic/face-api": "^1.7.14",
+		"aws-sdk": "^2.1692.0",
+		"canvas": "^2.11.2",
+		"firebase": "^11.0.1",
+		"form-data": "^4.0.1",
+		"hono": "^4.5.7",
+		"mock-aws-s3": "^4.0.2",
+		"nock": "^13.5.5",
+		"seedrandom": "^3.0.5"
+	},
+	"devDependencies": {
+		"@hyrious/esbuild-plugin-commonjs": "^0.2.4",
+		"@types/bun": "^1.1.13",
+		"@types/node": "^20.11.17",
+		"esbuild": "^0.24.0",
+		"tsx": "^4.19.2",
+		"vercel": "^37.14.0"
+	},
+	"packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
+}
