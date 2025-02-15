@@ -6,8 +6,6 @@
 		"dev": "tsx watch scripts/run.ts",
 		"bundle": "pnpx bun scripts/bundle.ts",
 		"transpile": "pnpx bun scripts/transpile.ts",
-		"test": "node --import tsx --test ./tests/integration.ts",
-		"test:dev": "node --import tsx --test --watch ./tests/integration.ts",
 		"deploy": "vercel deploy"
 	},
 	"dependencies": {
