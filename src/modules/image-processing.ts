@@ -77,7 +77,7 @@ const getUserId = async (name: string) => {
     if (!snapshot.exists()) return 0;
 
     const users = snapshot.val();
-    
+
     return Object.values(users).find((user: any) => user.id);
   } catch (error) {
     console.error("Error fetching user:", error);
@@ -90,9 +90,7 @@ const logAttendance = async (userId: number, userName: string) => {
   const currentDate = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
 
   // Convert current time to UTC+1 (WAT)
-  const currentTime = new Date(
-    new Date().getTime() + 60 * 60 * 1000
-  ).toLocaleTimeString("en-US", {
+  const currentTime = new Date(new Date().getTime() + 60 * 60 * 1000).toLocaleTimeString("en-US", {
     hour: "2-digit",
     minute: "2-digit",
     hour12: true,
@@ -142,7 +140,7 @@ export const router = new Hono().post("/stream", async (c) => {
     if (!base64Image || typeof base64Image !== "string") {
       return c.json({ error: "Image data not provided or invalid" }, 400);
     }
-    
+
     // Decode base64 to buffer
     const imageBuffer = Buffer.from(base64Image, "base64");
 
