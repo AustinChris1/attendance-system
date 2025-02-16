@@ -57,6 +57,9 @@ importers:
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
+      typescript:
+        specifier: ^5.7.3
+        version: 5.7.3
       vercel:
         specifier: ^37.14.0
         version: 37.14.0
@@ -1995,6 +1998,11 @@ packages:
   typescript@4.9.5:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
+    hasBin: true
+
+  typescript@5.7.3:
+    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   uid-promise@1.0.0:
@@ -4151,6 +4159,8 @@ snapshots:
       fsevents: 2.3.3
 
   typescript@4.9.5: {}
+
+  typescript@5.7.3: {}
 
   uid-promise@1.0.0: {}
 

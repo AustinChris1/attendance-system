@@ -70,7 +70,7 @@ const loadLabeledImages = async () => {
 
 const labeledFaceDescriptors = await loadLabeledImages();
 
-const getUserId = async (name: string) => {
+const getUserId = async (name: string): Promise<any> => {
   try {
     const usersRef = ref(db, "/");
     const snapshot = await get(usersRef);
